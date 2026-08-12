@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: info — Sprout (Fresh & Light)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#EAF2E4; --bg-alt:#F6FAF2; --text:#22301F; --text-dim:rgba(34,48,31,0.65); --accent:#3E7C4F; --accent-2:#E86A4E; --line:rgba(34,48,31,0.14); }
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--text); font-family:'Nunito',sans-serif; font-weight:400; line-height:1.65;}
+h1,h2,h3{font-family:'Fredoka',sans-serif; font-weight:600;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1060px; margin:0 auto; padding:0 32px;}
+
+/* COPY START */
+.info-sprout{padding:90px 0; background:var(--bg-alt); border-top:1px solid var(--line);}
+.info-sprout .head{text-align:center; max-width:520px; margin:0 auto 50px;}
+.info-sprout .head span{color:var(--accent-2); font-weight:700; font-size:13px; letter-spacing:.14em; text-transform:uppercase;}
+.info-sprout .head h2{font-size:clamp(28px,4vw,42px); margin-top:10px; color:var(--accent);}
+.info-sprout .grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+.info-sprout .card{background:var(--bg); border-radius:20px; padding:30px; border:1px solid var(--line);}
+.info-sprout .card h3{color:var(--accent); font-size:18px; margin-bottom:16px;}
+.info-sprout .row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed var(--line); font-size:14px;}
+.info-sprout .row:last-of-type{border-bottom:none;}
+.info-sprout .row span:first-child{color:var(--text-dim);}
+.info-sprout .row span:last-child{font-weight:700;}
+.info-sprout .btn{display:block; text-align:center; margin-top:18px; padding:14px; background:var(--accent-2); color:#fff; font-weight:700; border-radius:100px; transition:transform .25s ease;}
+.info-sprout .btn:hover{transform:translateY(-2px);}
+@media(max-width:760px){.info-sprout .grid{grid-template-columns:1fr;}}
+/* COPY END */
+@media(prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important;}}
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<section class="info-sprout" id="contact">
+  <div class="wrap">
+    <div class="head"><span>EDIT ME - Eyebrow</span><h2>Hours &amp; contact</h2></div>
+    <div class="grid">
+      <div class="card">
+        <h3>Business Hours</h3>
+        <div class="row"><span>EDIT ME - Day(s)</span><span>EDIT ME - Hours</span></div>
+        <div class="row"><span>EDIT ME - Day(s)</span><span>EDIT ME - Hours</span></div>
+        <div class="row"><span>EDIT ME - Day(s)</span><span>Closed</span></div>
+      </div>
+      <div class="card">
+        <h3>Say Hi</h3>
+        <div class="row"><span>Phone / Text</span><span>EDIT ME</span></div>
+        <div class="row"><span>Email</span><span>EDIT ME</span></div>
+        <div class="row"><span>Instagram</span><span>EDIT ME</span></div>
+        <a class="btn" href="mailto:EDIT-ME@example.com">EDIT ME - Email the Truck</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- COPY END -->
+
+</body>
+</html>

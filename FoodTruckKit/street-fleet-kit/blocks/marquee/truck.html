@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: Marquee Bar — Truck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#201E1B; --bg-alt:#2A2723; --text:#EFE7D8; --text-dim:rgba(239,231,216,0.6);
+    --accent:#E8A93B; --accent-2:#2F6F6E; --line:rgba(239,231,216,0.16);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--text); font-family:'Rubik', sans-serif; font-weight:300; line-height:1.6;}
+h1,h2,h3{font-family:'Bungee', sans-serif; font-weight:400;}
+h1,h2,h3{text-transform:uppercase;}
+.mono{font-family:'Space Mono', monospace;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+
+/* COPY START */
+.marquee-truck{background:var(--accent); color:var(--bg); overflow:hidden; white-space:nowrap; padding:14px 0; transform:rotate(-1deg); margin:20px -10px; width:calc(100% + 20px);}
+.marquee-truck div{display:inline-block; padding-left:100%; animation:marquee-scroll 20s linear infinite; font-family:'Bungee', sans-serif; font-size:1rem; letter-spacing:0.04em; text-transform:uppercase;}
+.marquee-truck span{margin:0 26px; color:var(--accent-2);}
+@keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+@media (prefers-reduced-motion: reduce){.marquee-truck div{animation:none; padding-left:0;}}
+/* COPY END */
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<div class="marquee-truck">
+  <div><span>&#9733;</span>EDIT ME - ITEM OR PHRASE<span>&#9733;</span>EDIT ME - ITEM OR PHRASE<span>&#9733;</span>EDIT ME - ITEM OR PHRASE<span>&#9733;</span>EDIT ME - ITEM OR PHRASE<span>&#9733;</span>EDIT ME - ITEM OR PHRASE<span>&#9733;</span>EDIT ME - ITEM OR PHRASE</div>
+</div>
+<!-- COPY END -->
+
+</body>
+</html>

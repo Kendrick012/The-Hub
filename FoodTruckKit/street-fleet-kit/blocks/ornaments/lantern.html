@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: Ornament - Lantern</title>
+<style>
+:root{
+    --bg:#1B1D16; --bg-alt:#22251C; --text:#F2EDE1; --text-dim:#C9C4B6;
+    --accent:#8A6E4B; --accent-2:#4B5842; --line: rgba(242,237,225,0.14);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:var(--bg); min-height:100vh; display:flex; align-items:center; justify-content:center;}
+
+/* COPY START
+   Swaying lantern with rising steam. Drop into a hero's visual column
+   (e.g. replace a .visual div in a split hero). All colors come from the
+   theme tokens, so it works in any template. The glow uses color-mix on
+   --accent - tweak the percentages to brighten or dim it. */
+.lantern-wrap{position:relative; display:flex; justify-content:center; align-items:center; height:340px;}
+.lantern{
+    position:relative; width:180px; height:230px;
+    background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--accent) 55%, white), var(--accent) 75%);
+    border-radius:50% / 40%;
+    box-shadow:0 0 60px 10px color-mix(in srgb, var(--accent) 55%, transparent),
+               0 0 120px 40px color-mix(in srgb, var(--accent-2) 30%, transparent);
+    animation:lantern-sway 5s ease-in-out infinite;
+}
+.lantern:before, .lantern:after{
+    content:""; position:absolute; left:50%; transform:translateX(-50%);
+    width:40px; height:14px; background:var(--accent-2); border-radius:3px;
+}
+.lantern:before{top:-10px;}
+.lantern:after{bottom:-10px;}
+.lantern-line{position:absolute; top:-70px; left:50%; width:2px; height:70px; background:var(--line);}
+@keyframes lantern-sway{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
+.steam{
+    position:absolute; bottom:20px; width:6px; height:60px; border-radius:50%;
+    background:linear-gradient(to top, color-mix(in srgb, var(--text) 35%, transparent), transparent);
+    animation:steam-rise 3.4s ease-in-out infinite;
+}
+.steam:nth-of-type(2){left:calc(50% - 18px); animation-delay:.6s;}
+.steam:nth-of-type(3){left:calc(50% + 12px); animation-delay:1.2s;}
+@keyframes steam-rise{0%{opacity:0; transform:translateY(0) scaleX(1);}30%{opacity:0.7;}100%{opacity:0; transform:translateY(-70px) scaleX(1.6);}}
+@media (prefers-reduced-motion: reduce){
+    .lantern{animation:none;}
+    .steam{animation:none; opacity:0.35;}
+}
+/* COPY END */
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<div class="lantern-wrap">
+  <div class="lantern-line"></div>
+  <div class="lantern"></div>
+  <div class="steam"></div>
+  <div class="steam"></div>
+  <div class="steam"></div>
+</div>
+<!-- COPY END -->
+
+</body>
+</html>

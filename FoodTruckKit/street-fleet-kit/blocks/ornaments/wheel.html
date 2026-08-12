@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: Ornament - Rotating Wheel</title>
+<style>
+:root{
+    --bg:#E6EAE0; --bg-alt:#F6F5F0; --text:#2C2A24; --text-dim:rgba(44,42,36,0.65);
+    --accent:#472341; --accent-2:#A9814B; --line: rgba(44,42,36,0.15);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:var(--bg); min-height:100vh; display:flex; align-items:center; justify-content:center; font-family:sans-serif;}
+
+/* COPY START
+   Slowly rotating wheel with 6 labels and a counter-rotating center
+   (the center spins the opposite way so its content stays upright).
+   Drop into a hero's visual column. Labels and the center emoji/icon
+   are the EDIT ME spots. Colors all come from theme tokens. */
+.wheel-wrap{display:flex; align-items:center; justify-content:center;}
+.wheel{
+    position:relative; width:340px; height:340px; border-radius:50%;
+    background:var(--bg-alt); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    animation:wheel-turn 40s linear infinite;
+}
+@keyframes wheel-turn{to{transform:rotate(360deg);}}
+.wheel-center{
+    position:absolute; width:120px; height:120px; border-radius:50%; background:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:2.6rem;
+    animation:wheel-counter 40s linear infinite; z-index:2;
+    box-shadow:0 8px 24px color-mix(in srgb, var(--text) 25%, transparent);
+}
+@keyframes wheel-counter{to{transform:rotate(-360deg);}}
+.wheel-seg{
+    position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%;
+    display:flex; align-items:flex-start; justify-content:center; padding-top:14px;
+    font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text);
+}
+.wheel-seg span{
+    display:inline-block; transform:rotate(90deg);
+    background:var(--bg); padding:6px 10px; border-radius:100px; border:1px solid var(--line);
+}
+.wheel-seg:nth-child(1){transform:rotate(0deg) translateX(-50%);}
+.wheel-seg:nth-child(2){transform:rotate(60deg) translateX(-50%);}
+.wheel-seg:nth-child(3){transform:rotate(120deg) translateX(-50%);}
+.wheel-seg:nth-child(4){transform:rotate(180deg) translateX(-50%);}
+.wheel-seg:nth-child(5){transform:rotate(240deg) translateX(-50%);}
+.wheel-seg:nth-child(6){transform:rotate(300deg) translateX(-50%);}
+@media (prefers-reduced-motion: reduce){
+    .wheel, .wheel-center{animation:none;}
+}
+@media (max-width:480px){
+    .wheel{width:280px; height:280px;}
+    .wheel-center{width:100px; height:100px; font-size:2.2rem;}
+}
+/* COPY END */
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<div class="wheel-wrap">
+  <div class="wheel">
+    <div class="wheel-seg"><span>EDIT ME</span></div>
+    <div class="wheel-seg"><span>EDIT ME</span></div>
+    <div class="wheel-seg"><span>EDIT ME</span></div>
+    <div class="wheel-seg"><span>EDIT ME</span></div>
+    <div class="wheel-seg"><span>EDIT ME</span></div>
+    <div class="wheel-seg"><span>EDIT ME</span></div>
+    <div class="wheel-center">&#127793;</div>
+  </div>
+</div>
+<!-- COPY END -->
+
+</body>
+</html>

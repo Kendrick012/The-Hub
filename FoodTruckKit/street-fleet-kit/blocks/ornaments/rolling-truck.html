@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: Ornament - Rolling Food Truck</title>
+<style>
+:root{
+    --bg:#201E1B; --bg-alt:#2A2723; --text:#EFE7D8; --text-dim:rgba(239,231,216,0.6);
+    --accent:#E8A93B; --accent-2:#2F6F6E; --line:rgba(239,231,216,0.16);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:var(--bg); min-height:100vh; display:flex; align-items:center; justify-content:center;}
+
+/* COPY START
+ROLLING FOOD TRUCK - a little truck bouncing on its suspension with
+spinning wheels and road dashes streaming underneath. Story piece for
+food trucks / mobile businesses. Sits absolutely in a hero (bottom
+corner works best) - give the hero position:relative. */
+.rig{position:relative; width:240px; height:130px; pointer-events:none;}
+.rig-body{position:absolute; bottom:28px; left:0; width:150px; height:66px;
+    background:var(--accent); border-radius:6px 10px 4px 4px;
+    animation:rig-bump .8s ease-in-out infinite;}
+.rig-body:after{content:""; position:absolute; top:12px; left:14px; right:14px; height:20px;
+    background:var(--bg); opacity:.35; border-radius:3px;}
+.rig-cab{position:absolute; bottom:28px; left:148px; width:58px; height:50px;
+    background:var(--accent-2); border-radius:4px 12px 4px 4px;
+    animation:rig-bump .8s ease-in-out .1s infinite;}
+.rig-cab:after{content:""; position:absolute; top:8px; right:8px; width:20px; height:16px;
+    background:var(--text); opacity:.8; border-radius:2px;}
+@keyframes rig-bump{0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);}}
+.rig-wheel{position:absolute; bottom:8px; width:38px; height:38px; border-radius:50%;
+    background:var(--text); border:7px solid var(--bg-alt);
+    animation:rig-roll 0.9s linear infinite;}
+.rig-wheel:after{content:""; position:absolute; top:2px; left:50%; margin-left:-2px;
+    width:4px; height:10px; background:var(--bg-alt); border-radius:2px;}
+.rig-wheel.w1{left:22px;}
+.rig-wheel.w2{left:150px;}
+@keyframes rig-roll{to{transform:rotate(360deg);}}
+.rig-road{position:absolute; bottom:0; left:-16px; right:-16px; height:4px; border-radius:2px;
+    background:repeating-linear-gradient(90deg, var(--text-dim) 0 22px, transparent 22px 44px);
+    animation:rig-road-move .45s linear infinite;}
+@keyframes rig-road-move{to{background-position:-44px 0;}}
+@media (prefers-reduced-motion: reduce){ .rig, .rig *{animation:none !important;} }
+/* COPY END */
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<div class="rig">
+  <div class="rig-body"></div>
+  <div class="rig-cab"></div>
+  <div class="rig-wheel w1"></div>
+  <div class="rig-wheel w2"></div>
+  <div class="rig-road"></div>
+</div>
+<!-- COPY END -->
+
+</body>
+</html>

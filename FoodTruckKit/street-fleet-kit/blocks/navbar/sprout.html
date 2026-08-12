@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: navbar — Sprout (Fresh & Light)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#EAF2E4; --bg-alt:#F6FAF2; --text:#22301F; --text-dim:rgba(34,48,31,0.65); --accent:#3E7C4F; --accent-2:#E86A4E; --line:rgba(34,48,31,0.14); }
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--text); font-family:'Nunito',sans-serif; font-weight:400; line-height:1.65;}
+h1,h2,h3{font-family:'Fredoka',sans-serif; font-weight:600;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1060px; margin:0 auto; padding:0 32px;}
+
+/* COPY START */
+nav.nav-sprout{position:fixed; top:0; left:0; right:0; z-index:50; display:flex; justify-content:space-between; align-items:center; padding:20px 36px; background:color-mix(in srgb, var(--bg) 92%, transparent); border-bottom:1px solid var(--line);}
+.nav-sprout .logo{font-family:'Fredoka',sans-serif; font-weight:600; font-size:18px; color:var(--accent);}
+.nav-sprout .links{display:flex; gap:26px; font-size:14px; font-weight:600;}
+.nav-sprout .links a{opacity:.75;} .nav-sprout .links a:hover{opacity:1; color:var(--accent);}
+@media(max-width:760px){.nav-sprout .links{display:none;}}
+/* COPY END */
+@media(prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important;}}
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<nav class="nav-sprout">
+  <a class="logo" href="#">EDIT ME - Name</a>
+  <div class="links"><a href="#menu">Menu</a><a href="#find">Find Us</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+</nav>
+<!-- COPY END -->
+
+</body>
+</html>

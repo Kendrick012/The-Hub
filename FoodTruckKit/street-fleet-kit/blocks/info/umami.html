@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview: info — Umami (Night Market)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#191423; --bg-alt:#221B30; --text:#F3EDE4; --text-dim:rgba(243,237,228,0.6); --accent:#E8A05C; --accent-2:#C8462E; --line:rgba(243,237,228,0.14); }
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--text); font-family:'Manrope',sans-serif; font-weight:300; line-height:1.7;}
+h1,h2,h3{font-family:'Zen Antique',serif; font-weight:400;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1060px; margin:0 auto; padding:0 32px;}
+
+/* COPY START */
+.info-umami{padding:90px 0; background:var(--bg-alt);}
+.info-umami .head{text-align:center; margin-bottom:52px;}
+.info-umami .head span{font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent);}
+.info-umami .head h2{font-size:clamp(28px,4vw,44px); margin-top:12px;}
+.info-umami .cols{display:grid; grid-template-columns:1fr 1fr; gap:50px; max-width:760px; margin:0 auto;}
+.info-umami h3{font-size:18px; margin-bottom:18px; color:var(--accent);}
+.info-umami .row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:14px;}
+.info-umami .row:last-of-type{border-bottom:none;}
+.info-umami .row span:first-child{color:var(--text-dim);}
+.info-umami .btn{display:inline-block; margin-top:22px; padding:13px 32px; border:1px solid var(--accent); color:var(--accent); font-size:12px; letter-spacing:.14em; text-transform:uppercase; transition:all .3s ease;}
+.info-umami .btn:hover{background:var(--accent); color:var(--bg);}
+@media(max-width:760px){.info-umami .cols{grid-template-columns:1fr;}}
+/* COPY END */
+@media(prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important;}}
+</style>
+</head>
+<body>
+
+<!-- COPY START -->
+<section class="info-umami" id="contact">
+  <div class="wrap">
+    <div class="head"><span>EDIT ME - Eyebrow</span><h2>Hours &amp; contact</h2></div>
+    <div class="cols">
+      <div>
+        <h3>Business Hours</h3>
+        <div class="row"><span>EDIT ME - Day(s)</span><span>EDIT ME - Hours</span></div>
+        <div class="row"><span>EDIT ME - Day(s)</span><span>EDIT ME - Hours</span></div>
+        <div class="row"><span>EDIT ME - Day(s)</span><span>Closed</span></div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="row"><span>Phone</span><span>EDIT ME</span></div>
+        <div class="row"><span>Email</span><span>EDIT ME</span></div>
+        <div class="row"><span>Instagram</span><span>EDIT ME</span></div>
+        <a class="btn" href="mailto:EDIT-ME@example.com">EDIT ME - Book an Event</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- COPY END -->
+
+</body>
+</html>

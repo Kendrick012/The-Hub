@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT ME - Truck Name</title>
+
+    <!-- FONTS: keep the link(s) for whichever style(s) you're using.
+         truck:  Bungee + Rubik + Space Mono
+         umami:  Zen Antique + Manrope
+         sprout: Fredoka + Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- TOKENS: paste ONE style's :root here. All blocks read these. -->
+    <style>
+        /* truck (dark asphalt + mustard) */
+        :root{
+            --bg:#201E1B; --bg-alt:#2A2723; --text:#EFE7D8; --text-dim:rgba(239,231,216,0.6);
+            --accent:#E8A93B; --accent-2:#2F6F6E; --line:rgba(239,231,216,0.16);
+        }
+        /* umami (indigo night + lantern glow) - swap in to reskin:
+        :root{
+            --bg:#191423; --bg-alt:#221B30; --text:#F3EDE4; --text-dim:rgba(243,237,228,0.6);
+            --accent:#E8A05C; --accent-2:#C8462E; --line:rgba(243,237,228,0.14);
+        } */
+        /* sprout (light sage + green/coral) - swap in to reskin:
+        :root{
+            --bg:#EAF2E4; --bg-alt:#F6FAF2; --text:#22301F; --text-dim:rgba(34,48,31,0.65);
+            --accent:#3E7C4F; --accent-2:#E86A4E; --line:rgba(34,48,31,0.14);
+        } */
+
+        *{box-sizing:border-box; margin:0; padding:0;}
+        html{scroll-behavior:smooth;}
+        body{background:var(--bg); color:var(--text); font-family:'Rubik',sans-serif; font-weight:300; line-height:1.6;}
+        h1,h2,h3{font-family:'Bungee',sans-serif; text-transform:uppercase; font-weight:400;}
+        .mono{font-family:'Space Mono',monospace;}
+        a{color:inherit; text-decoration:none;}
+        .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+        :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+        .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease;}
+        .reveal.in{opacity:1; transform:none;}
+        @media(prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important;} .reveal{opacity:1; transform:none;}}
+    </style>
+</head>
+<body>
+
+    <!-- BUILD ORDER - pick one style column (truck / umami / sprout) or mix:
+         navbar   -> hero (+ ornament) -> marquee (truck style only)
+         -> menu -> map -> reviews -> info -> footer
+
+         Copy only what's between each block's COPY START/END markers
+         (CSS into the <style> above, markup here). The shared :root and
+         reveal styles above are already done - don't re-paste them.
+
+         ORNAMENTS: rolling-truck / lantern / wheel in blocks/ornaments/.
+         The hero files mark where each one slots in.
+
+         MAP: in blocks/map/, replace the iframe's q= value with the
+         client's address, URL-encoded (spaces -> %20). No API key needed.
+
+         HUB PAGE: for a multi-truck homepage, stack blocks/hub/band.html
+         once per truck, overriding --band-bg / --band-text / --band-accent
+         inline per copy, each button linking to that truck's page.
+
+         Fonts follow style: if you mix styles, include both font links,
+         then standardize once the client approves the combination. -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var els = document.querySelectorAll('section, footer');
+  els.forEach(function (el) { el.classList.add('reveal'); });
+  if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(function (el) { io.observe(el); });
+});
+</script>
+</body>
+</html>
